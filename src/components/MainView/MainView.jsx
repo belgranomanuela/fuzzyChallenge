@@ -2,65 +2,23 @@ import React from 'react';
 import ProductList from '../ProductList/ProductList';
 import Cart from '../Cart/Cart';
 import './MainView.scss';
+import ProductItemsList from '../../products.json';
+
 const MainView = () => {
-    const products = [
-        {
-          "name": "iPhone 14 Pro Max",
-          "unit_price": 5000,
-          "stock": 5,
-          "type": "technology"
-        },
-        {
-          "name": "Joystick",
-          "unit_price": 1000,
-          "stock": 1,
-          "type": "technology"
-        },
-        {
-          "name": "Roadmaster Bicycle",
-          "unit_price": 1800,
-          "stock": 1,
-          "type": "sport"
-        },
-        {
-          "name": "Bicycle Helmet",
-          "unit_price": 200,
-          "stock": 0,
-          "type": "sport"
-        },
-        {
-          "name": "Football",
-          "unit_price": 120,
-          "stock": 6,
-          "type": "sport"
-        },
-        {
-          "name": "Shower Head",
-          "unit_price": 120,
-          "stock": 8,
-          "type": "building"
-        },
-        {
-          "name": "Kitchen Sink",
-          "unit_price": 650,
-          "stock": 10,
-          "type": "building"
-        },
-        {
-          "name": "Kitchen Cabinet",
-          "unit_price": 900,
-          "stock": 2,
-          "type": "building"
-        } 
-      ]
-    const [cart, setCart] = React.useState([]);
+    const [products, setProducts] = React.useState(ProductItemsList.products);
+    const [cartProducts, setCartProducts] = React.useState([]);
+  
+    const addProductToCart = (product) => {
+      const newCartProducts = product.stock > 0 ? cartProducts.concat(product) : cartProducts;
+      setCartProducts(newCartProducts);
+    };
     return (
         <div className='mainViewContainer'>
           <div className='productListContainer'>
-            <ProductList products={products}/>
+            <ProductList products={products} onAddToCart={addProductToCart}/>
           </div>
           <div className='cartContainer'>
-            <Cart cart={cart}/>
+            <Cart products={cartProducts}/>
           </div>
         </div>
     )

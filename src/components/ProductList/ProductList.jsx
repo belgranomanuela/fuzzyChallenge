@@ -1,17 +1,8 @@
 import React from 'react';
-import { useEffect } from 'react';
 import './ProductList.scss';
 
 
-const ProductList = ({ products }) => {
-    const [cart, setCart] = React.useState([]);
-    const addToCart = (product) => {
-        setCart([...cart, product]);
-    }
-    useEffect(() => {
-        console.log(cart);
-    }, [cart]);
-
+const ProductList = ({ products, onAddToCart }) => {
     const productDetails = products.map((product) => {
         return (
             <div key={product.id} className='productContainer'>
@@ -20,7 +11,7 @@ const ProductList = ({ products }) => {
                     <p>{product.name}</p>
                     <div className='bottomProduct'>
                         <p>{product.stock}</p>
-                        <button onClick={() => addToCart(product.name)}>Add to cart</button>
+                        <button onClick={() => onAddToCart(product)}>Add to cart</button>
                     </div>
                 </div>
             </div>
