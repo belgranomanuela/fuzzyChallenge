@@ -1,3 +1,5 @@
+https://fuzzy-challenge.vercel.app/
+
 Building an online shopping site from the ground up using HTML, Javascript and CSS. 
 
 This is what the application needs to do:
