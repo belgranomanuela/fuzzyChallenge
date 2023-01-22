@@ -1,4 +1,5 @@
 import React from 'react';
+import './Cart.scss';
 
 const Cart = ({ products }) => {
     const calcTotalOrderPrice = (products) => {
@@ -10,19 +11,6 @@ const Cart = ({ products }) => {
 
         return totalPrice;
     };
-    console.log(products)
-    //map the cart a create a new json with a structure like this: {
-    // "cartProducts": [
-    //     {
-    //       "product_name": "product_name",
-    //       "quantity": quantity,
-    //       "price": price,
-    //       "type": "type"
-    //     }
-  
-    //   ],
-    //   "orderPrice": orderPrice
-    // }
     const createOrder = () => {
         let newJson = {
             "cartProducts": [],
@@ -37,9 +25,10 @@ const Cart = ({ products }) => {
             })
         })
         newJson.orderPrice = calcTotalOrderPrice(products)
+        localStorage.setItem('order', JSON.stringify(newJson))
         return newJson
     }
-    console.log(createOrder())
+    
 
     return (
         <div>
