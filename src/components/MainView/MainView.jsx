@@ -53,14 +53,14 @@ const MainView = () => {
           "type": "building"
         } 
       ]
-
+    const [cart, setCart] = React.useState([]);
     return (
         <div className='mainViewContainer'>
           <div className='productListContainer'>
             <ProductList products={products}/>
           </div>
           <div className='cartContainer'>
-            <Cart products={products}/>
+            <Cart cart={cart}/>
           </div>
         </div>
     )

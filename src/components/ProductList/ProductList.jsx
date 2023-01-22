@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import './ProductList.scss';
 
 
@@ -7,6 +8,10 @@ const ProductList = ({ products }) => {
     const addToCart = (product) => {
         setCart([...cart, product]);
     }
+    useEffect(() => {
+        console.log(cart);
+    }, [cart]);
+
     const productDetails = products.map((product) => {
         return (
             <div key={product.id} className='productContainer'>
@@ -15,7 +20,7 @@ const ProductList = ({ products }) => {
                     <p>{product.name}</p>
                     <div className='bottomProduct'>
                         <p>{product.stock}</p>
-                        <button onClick={addToCart}>Add to cart</button>
+                        <button onClick={() => addToCart(product.name)}>Add to cart</button>
                     </div>
                 </div>
             </div>

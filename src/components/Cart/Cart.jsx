@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cart = ({ products }) => {
+const Cart = ({ cart }) => {
     return (
         <div>
             <h1>Cart</h1>
@@ -14,14 +14,14 @@ const Cart = ({ products }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {products.map((product) => (
-                        <tr key={product.id}>
-                            <td>{product.name}</td>
-                            <td>{product.stock}</td>
-                            <td>{product.unit_price}</td>
-                            <td>{product.unit_price * product.stock}</td>
+                    {cart.map((x) => cart[x] ? (
+                        <tr>
+                            <td>{cart[x]}</td>
+                            <td>$</td>
+                            <td>$</td>
                         </tr>
-                    ))}
+                    ) : null)
+                    }
                 </tbody>
             </table>
             <div>
