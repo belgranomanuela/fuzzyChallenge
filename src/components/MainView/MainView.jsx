@@ -17,19 +17,19 @@ const MainView = () => {
           "type": "technology"
         },
         {
-          "name": "Roadmaster Bycicle",
+          "name": "Roadmaster Bicycle",
           "unit_price": 1800,
           "stock": 1,
           "type": "sport"
         },
         {
-          "name": "Bycicle",
+          "name": "Bicycle Helmet",
           "unit_price": 200,
           "stock": 0,
           "type": "sport"
         },
         {
-          "name": "Futball",
+          "name": "Football",
           "unit_price": 120,
           "stock": 6,
           "type": "sport"
@@ -53,7 +53,7 @@ const MainView = () => {
           "type": "building"
         } 
       ]
-    
+
     return (
         <div className='mainViewContainer'>
           <div className='productListContainer'>

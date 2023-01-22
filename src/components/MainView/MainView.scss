@@ -1,5 +1,13 @@
 .mainViewContainer{
     display: flex;
-    margin: auto;
-    width: 90%;
+    padding-top: 10px;
+    .productListContainer{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 65%;
+        padding: none;
+  
+    }
 }

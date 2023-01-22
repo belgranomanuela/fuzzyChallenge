@@ -1,3 +1,23 @@
 .productContainer {
-    width: 100%;
+    padding: none;
+    .content{
+        border-radius: 5px;
+        border: 1px solid #000;        
+    }
+    .bottomProduct{
+        display: flex;
+        justify-content: center;
+        color: rgb(132, 127, 127);
+        button{
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid rgb(132, 127, 127);
+            background-color: #fff;
+            color: rgb(132, 127, 127);
+            &:hover{
+                background-color: rgb(132, 127, 127);
+                color: #fff;
+            }
+        }
+    }
 }
